@@ -1,0 +1,257 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.chart.PieChart?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Spinner?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="530.0" prefWidth="853.0" styleClass="background" stylesheets="@style.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sio.autoecoleprojet.PageEleveController">
+   <children>
+      <AnchorPane layoutX="51.0" layoutY="93.0" prefHeight="401.0" prefWidth="155.0" style="-fx-background-radius: 25px;" styleClass="navbar" stylesheets="@style.css">
+         <children>
+            <Button fx:id="btnProfilE" layoutX="12.0" layoutY="40.0" mnemonicParsing="false" onMouseClicked="#btnMenuClicked" prefHeight="29.0" prefWidth="133.0" styleClass="button-navbar" text="PROFIL">
+               <cursor>
+                  <Cursor fx:constant="OPEN_HAND" />
+               </cursor>
+               <font>
+                  <Font size="10.0" />
+               </font></Button>
+            <Button fx:id="btnPlanningE" layoutX="13.0" layoutY="90.0" mnemonicParsing="false" onMouseClicked="#btnMenuClicked" prefHeight="29.0" prefWidth="133.0" styleClass="button-navbar" stylesheets="@style.css" text="PLANNING">
+               <cursor>
+                  <Cursor fx:constant="OPEN_HAND" />
+               </cursor>
+               <font>
+                  <Font size="10.0" />
+               </font></Button>
+
+            <Button fx:id="btnInscriptionE" layoutX="13.0" layoutY="140.0" mnemonicParsing="false" onMouseClicked="#btnMenuClicked" prefHeight="29.0" prefWidth="133.0" styleClass="button-navbar" text="INSCRIPTION LECON" textFill="WHITE">
+
+               <cursor>
+                  <Cursor fx:constant="OPEN_HAND" />
+               </cursor>
+               <font>
+                  <Font size="10.0" />
+               </font></Button>
+            <Button fx:id="btnStatistiqueE" layoutX="13.0" layoutY="190.0" mnemonicParsing="false" onMouseClicked="#btnMenuClicked" prefHeight="29.0" prefWidth="133.0" styleClass="button-navbar" text="STATISTIQUE" textFill="WHITE">
+               <cursor>
+                  <Cursor fx:constant="OPEN_HAND" />
+               </cursor>
+               <font>
+                  <Font size="10.0" />
+               </font></Button>
+            <Button fx:id="btnDeconnexion" layoutX="20.0" layoutY="350.0" mnemonicParsing="false" onMouseClicked="#btnMenuClicked" prefHeight="28.0" prefWidth="115.0" style="-fx-background-color: red; -fx-border-color: red;" styleClass="button-profil" text="DECONNEXION" textFill="WHITE">
+               <cursor>
+                  <Cursor fx:constant="OPEN_HAND" />
+               </cursor></Button>
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="278.0" layoutY="31.0" prefHeight="90.0" prefWidth="547.0">
+         <children>
+            <Label alignment="TOP_CENTER" layoutX="169.0" layoutY="22.0" prefHeight="46.0" prefWidth="214.0" style="-fx-text-fill: black;" text="ELEVE" textFill="WHITE">
+               <font>
+                  <Font size="31.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="apStatistique" layoutX="280.0" layoutY="140.0" onMouseClicked="#btnMenuClicked" prefHeight="354.0" prefWidth="543.0" styleClass="background-inscription-lecon">
+         <children>
+            <Label layoutX="244.0" layoutY="5.0" text="Statistique" />
+            <PieChart fx:id="graphPie" layoutX="184.0" layoutY="82.0" prefHeight="243.0" prefWidth="344.0" />
+            <Label alignment="CENTER" layoutX="26.0" layoutY="82.0" text="Nombre de leçons passées" textAlignment="CENTER" />
+            <Label alignment="CENTER" layoutX="14.0" layoutY="136.0" prefHeight="18.0" prefWidth="150.0" text="Nombre de leçons à venir" textAlignment="CENTER" />
+            <Label alignment="CENTER" layoutX="29.0" layoutY="186.0" text="Nombre total de leçons" />
+            <Label fx:id="lblNbLeconPasse" alignment="CENTER" layoutX="26.0" layoutY="108.0" prefHeight="18.0" prefWidth="126.0" textAlignment="CENTER" />
+            <Label fx:id="lblNbLeconAVenir" alignment="CENTER" layoutX="26.0" layoutY="158.0" prefHeight="18.0" prefWidth="126.0" textAlignment="CENTER" />
+            <Label fx:id="lblNbLeconTotal" alignment="CENTER" layoutX="26.0" layoutY="214.0" prefHeight="18.0" prefWidth="126.0" textAlignment="CENTER" />
+         </children>
+      </AnchorPane>
+
+      <AnchorPane fx:id="apInscription" layoutX="280.0" layoutY="140.0" onMouseClicked="#btnMenuClicked" prefHeight="354.0" prefWidth="543.0" styleClass="background-inscription-lecon">
+         <children>
+            <ComboBox fx:id="cboCategorieLecon" layoutX="32.0" layoutY="268.0" prefWidth="160.0" />
+            <DatePicker fx:id="dpDateLecon" layoutX="33.0" layoutY="215.0" promptText="Date">
+               <styleClass>
+                  <String fx:value="date-picker-popup" />
+                  <String fx:value="date-picker" />
+                  <String fx:value="day-cell" />
+               </styleClass></DatePicker>
+            <Spinner fx:id="spHeureLecon" layoutX="32.0" layoutY="308.0" prefWidth="160.0" />
+            <TableView fx:id="tvMoniteurDispo" layoutX="33.0" layoutY="54.0" prefHeight="152.0" prefWidth="207.0" styleClass="background">
+              <columns>
+                <TableColumn fx:id="tcMoniteurDispo" prefWidth="199.19998168945312" text="Moniteur" />
+              </columns>
+            </TableView>
+            <Button layoutX="390.0" layoutY="306.0" mnemonicParsing="false" onMouseClicked="#clickedInscription" prefHeight="30.0" prefWidth="100.0" styleClass="button-navbar" text="S'inscrire">
+               <cursor>
+                  <Cursor fx:constant="OPEN_HAND" />
+               </cursor></Button>
+            <Button layoutX="330.0" layoutY="268.0" mnemonicParsing="false" onMouseClicked="#clickedRecherche" prefWidth="160.0" styleClass="button-navbar" text="Rechercher un moniteur">
+               <cursor>
+                  <Cursor fx:constant="OPEN_HAND" />
+               </cursor></Button>
+            <Label layoutX="45.0" layoutY="18.0" text="Inscription Leçon" textFill="WHITE">
+               <font>
+                  <Font name="Arial Bold" size="16.0" />
+               </font>
+            </Label>
+            <TableView fx:id="tvVehiculeDispo" layoutX="278.0" layoutY="54.0" prefHeight="152.0" prefWidth="207.0" styleClass="background">
+               <columns>
+                  <TableColumn fx:id="tcVehiculeDispo" prefWidth="199.19998168945312" text="Véhicule" />
+               </columns>
+            </TableView>
+         </children></AnchorPane>
+      <AnchorPane fx:id="apPlanningE" layoutX="280.0" layoutY="140.0" prefHeight="353.0" prefWidth="543.0" style="-fx-background-radius: 20px;" styleClass="navbar">
+         <children>
+
+            <AnchorPane prefHeight="353.0" prefWidth="543.0" style="-fx-background-radius: 20px; -fx-background-color: black;">
+               <children>
+                  <Label layoutX="11.0" layoutY="1.0" prefHeight="18.0" prefWidth="200.0" text="PLANNING">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </Label>
+
+                  <TableView fx:id="tvLecon" layoutX="11.0" layoutY="47.0" prefHeight="282.0" prefWidth="526.0" style="-fx-background-color: blue;">
+                     <columns>
+                        <TableColumn fx:id="tcDate" prefWidth="85.0" text="Date" />
+                        <TableColumn fx:id="tcHeure" prefWidth="85.0" text="Heure" />
+                        <TableColumn fx:id="tcMoniteur" prefWidth="85.0" text="Moniteur" />
+                        <TableColumn fx:id="tcMarque" prefWidth="85.0" text="Marque" />
+                        <TableColumn fx:id="tcModele" prefWidth="85.0" text="Modele" />
+                        <TableColumn fx:id="tcTypePermis" prefWidth="85.0" text="TypePermis" />
+
+                     </columns>
+                  </TableView>
+               </children>
+               <styleClass>
+                  <String fx:value="stats-label" />
+                  <String fx:value="text-field" />
+                  <String fx:value="text-field-modif" />
+                  <String fx:value="table-row-cell" />
+                  <String fx:value="navbar" />
+               </styleClass>
+            </AnchorPane>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="apProfilModif" layoutX="280.0" layoutY="140.0" prefHeight="354.0" prefWidth="543.0" style="-fx-background-radius: 20px;" styleClass="navbar">
+         <children>
+            <Label layoutX="308.0" layoutY="53.0" text="Nom : " />
+            <Label layoutX="79.0" layoutY="53.0" text="Prénom : " />
+            <Label layoutX="79.0" layoutY="112.0" text="Sexe : " />
+            <Label layoutX="308.0" layoutY="112.0" text="Date de naissance : " />
+            <Label layoutX="79.0" layoutY="174.0" text="Code Postal : " />
+            <Label layoutX="308.0" layoutY="174.0" text="Ville : " />
+            <Label layoutX="79.0" layoutY="235.0" text="Téléphone :" />
+            <TextField fx:id="txtFNomEleve" layoutX="308.0" layoutY="74.0" prefHeight="4.0" prefWidth="160.0" promptText="Nom" styleClass="text-field-modif" />
+            <TextField fx:id="txtFPrenomEleve" layoutX="79.0" layoutY="74.0" promptText="Prénom" styleClass="text-field-modif" />
+            <TextField fx:id="txtFSexeEleve" layoutX="79.0" layoutY="135.0" promptText="Sexe" styleClass="text-field-modif" />
+            <TextField fx:id="txtFCodePostEleve" layoutX="79.0" layoutY="195.0" promptText="Code Postal" styleClass="text-field-modif" />
+            <TextField fx:id="txtFVilleEleve" layoutX="308.0" layoutY="195.0" promptText="Ville" styleClass="text-field-modif" />
+            <TextField fx:id="txtFTelEleve" layoutX="79.0" layoutY="255.0" promptText="Téléphone" styleClass="text-field-modif" />
+            <DatePicker fx:id="datePickDateNaissanceEleve" layoutX="308.0" layoutY="132.0" maxHeight="60.0" maxWidth="160.0" minHeight="29.0" minWidth="130.0" prefHeight="29.0" prefWidth="160.0" promptText="Date de Naissance" />
+            <Button layoutX="415.0" layoutY="305.0" mnemonicParsing="false" onMouseClicked="#btnModifierInfoEleve" styleClass="button-profil" text="Valider " textFill="WHITE">
+               <cursor>
+                  <Cursor fx:constant="OPEN_HAND" />
+               </cursor></Button>
+            <TextField fx:id="txtFAdresse" layoutX="308.0" layoutY="255.0" prefHeight="4.0" prefWidth="160.0" promptText="Adresse" styleClass="text-field-modif" />
+            <Label layoutX="308.0" layoutY="235.0" text="Adresse :" />
+            <Label layoutX="16.0" layoutY="16.0" prefHeight="26.0" prefWidth="58.0" text="PROFIL" textFill="WHITE">
+               <font>
+                  <Font name="Arial Bold" size="15.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="apProfil" layoutX="280.0" layoutY="140.0" prefHeight="353.0" prefWidth="543.0" style="-fx-background-radius: 20px;" styleClass="navbar">
+         <children>
+            <AnchorPane prefHeight="353.0" prefWidth="543.0" style="-fx-background-radius: 20px;" styleClass="navbar" stylesheets="@style.css">
+               <children>
+                  <Label layoutX="54.0" layoutY="200.0" styleClass="label-profil" text="Sexe : " textFill="WHITE" />
+                  <Label layoutX="54.0" layoutY="225.0" styleClass="label-profil" text="Date de naissance : " textFill="WHITE" />
+                  <Label fx:id="lblSexe" layoutX="100.0" layoutY="200.0" prefHeight="17.0" prefWidth="61.0" styleClass="label-profil" text="Femme" textFill="WHITE" />
+                  <Label fx:id="lblDate" layoutX="175.0" layoutY="225.0" styleClass="label-profil" text="09/02/2000" textFill="WHITE" />
+                  <Button layoutX="54.0" layoutY="290.0" mnemonicParsing="false" onMouseClicked="#clickedBtnModif" prefHeight="28.0" prefWidth="78.0" stylesheets="@style.css" text="Modifier" textFill="WHITE">
+                     <styleClass>
+                        <String fx:value="button-profil" />
+                        <String fx:value="button-profil" />
+                     </styleClass>
+                     <cursor>
+                        <Cursor fx:constant="OPEN_HAND" />
+                     </cursor>
+                  </Button>
+                  <AnchorPane layoutX="334.0" layoutY="122.0" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="93.0" prefWidth="189.0" stylesheets="@style.css">
+                     <children>
+                        <Label alignment="TOP_RIGHT" layoutX="17.0" layoutY="65.0" text="Mot de passe : " textFill="WHITE" />
+                        <Label fx:id="lblLogin" layoutX="59.0" layoutY="45.0" text="GDhb12" textFill="WHITE" />
+                        <Label fx:id="lblMdp" layoutX="102.0" layoutY="65.0" maxWidth="50.0" text="Test1" textFill="WHITE" />
+                        <Label layoutX="53.0" layoutY="15.0" text="Identifiant" textFill="WHITE">
+                           <font>
+                              <Font name="Arial Bold" size="18.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="17.0" layoutY="45.0" text="Login :" textFill="WHITE" />
+                     </children>
+                     <styleClass>
+                        <String fx:value="border-radius" />
+                        <String fx:value="label-profil" />
+                        <String fx:value="background" />
+                     </styleClass>
+                  </AnchorPane>
+                  <AnchorPane layoutX="334.0" layoutY="227.0" prefHeight="111.0" prefWidth="189.0" stylesheets="@style.css">
+                     <children>
+                        <Label layoutX="16.0" layoutY="45.0" text="Adresse :" textFill="WHITE" />
+                        <Label layoutX="16.0" layoutY="85.0" text="Code postal : " textFill="WHITE" />
+                        <Label layoutX="16.0" layoutY="65.0" text="Ville : " textFill="WHITE" />
+                        <Label fx:id="lblAdresse" layoutX="74.0" layoutY="45.0" text="6 rue de Paris" textFill="WHITE" />
+                        <Label fx:id="lblCodePostal" layoutX="94.0" layoutY="85.0" text="95100" textFill="WHITE" />
+                        <Label fx:id="lblVille" layoutX="52.0" layoutY="65.0" text="Argenteuil" textFill="WHITE" />
+                        <Label layoutX="46.0" layoutY="13.0" text="Information" textFill="WHITE">
+                           <font>
+                              <Font name="Arial Bold" size="18.0" />
+                           </font>
+                        </Label>
+                     </children>
+                     <styleClass>
+                        <String fx:value="border-radius" />
+                        <String fx:value="label-profil" />
+                        <String fx:value="background" />
+                     </styleClass>
+                  </AnchorPane>
+                  <Label fx:id="lblTel" layoutX="90.0" layoutY="250.0" styleClass="label-profil" text="06 65 34 35 36" textFill="WHITE" />
+                  <Label layoutX="54.0" layoutY="250.0" styleClass="label-profil" text="Tel : " textFill="WHITE" />
+                  <AnchorPane layoutX="37.0" layoutY="24.0" prefHeight="78.0" prefWidth="479.0" style="-fx-background-radius: 20px;" styleClass="background">
+                     <children>
+                        <Label layoutX="16.0" layoutY="15.0" prefHeight="23.0" prefWidth="107.0" styleClass="label-profil-bold" text="Bienvenue ">
+                           <font>
+                              <Font name="Arial Bold" size="15.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="lblNom" layoutX="99.0" layoutY="20.0" prefHeight="15.0" prefWidth="31.0" styleClass="label-profil" text="Paul" textFill="WHITE" />
+                        <Label fx:id="lblPrenom" layoutX="130.0" layoutY="20.0" styleClass="label-profil" text="Miniou" textFill="WHITE" />
+                        <Label layoutX="16.0" layoutY="45.0" styleClass="label-profil" text="Vous etes sur votre Profil !" />
+                        <ImageView fitHeight="45.0" fitWidth="63.0" layoutX="350.0" layoutY="15.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../img/AvatarConnexion.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </AnchorPane>
+                  <Label layoutX="54.0" layoutY="129.0" styleClass="label-profil-bold" text="Vos informations :" />
+               </children>
+            </AnchorPane>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

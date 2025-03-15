@@ -1,0 +1,212 @@
+.root {
+    -fx-background-color: rgb (53 , 55 , 58); /* Couleur sombre */
+}
+
+
+.background-blue {
+    -fx-background-color: #00B0ff;
+    -fx-border-insets: 0;
+    -fx-background-insets: 0;
+}
+
+.background-white {
+    -fx-background-color: #ffff;
+    -fx-padding: 5px 10px;
+    -fx-border-insets: 0;
+    -fx-background-insets: 0;
+}
+
+.background-grey {
+    -fx-background-color: #f8f8f8;
+}
+
+.button-acceuil-inscription{
+    -fx-background-radius: 30px;
+    -fx-background-color: transparent;
+}
+
+
+.background {
+    -fx-background-color: #3366FF;
+    -fx-padding: 5px;
+}
+
+
+
+
+.navbar {
+     -fx-background-color: rgb(33 ,33 , 33);
+     -fx-background-radius: 100px;
+}
+
+.background-inscription-lecon {
+     -fx-background-color: rgb(33 ,33 , 33);
+     -fx-background-radius: 10px;
+}
+
+
+
+.border-radius {
+    -fx-background-radius: 20px;
+}
+
+/* STYLE GÉNÉRAL DU DATEPICKER */
+.date-picker {
+    -fx-background-color: rgba(255, 255, 255, 0.66);
+    -fx-text-fill: #333333;
+    -fx-padding: 5px;
+    -fx-font-size: 14px;
+    -fx-pref-height: 20px;
+    -fx-pref-width: 180px;
+    -fx-background-radius: 10;
+}
+
+.date-picker:focused {
+    -fx-border-color: rgb(69 , 95 , 237); /* Couleur rose vif pour le focus */
+    -fx-border-width: 2;
+    -fx-background-radius: 10;
+}
+
+.date-picker .text-field {
+    -fx-text-fill: black ;
+}
+/* STYLE DU BOUTON POUR OUVRIR LE CALENDRIER */
+.date-picker .arrow-button {
+    -fx-background-color: transparent;
+    -fx-border-radius: 5px;
+    -fx-padding: 5px;
+    -fx-cursor: hand;
+}
+
+
+
+.date-picker-popup {
+    -fx-background-color: rgba(255, 255, 255, 0.66);
+    -fx-border-color: #4682B4;
+    -fx-border-width: 2px;
+    -fx-border-radius: 10px;
+}
+
+/* HEADER DU MOIS ET DE L’ANNÉE */
+.date-picker-popup .month-year-pane {
+    -fx-background-color: #4682B4;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-alignment: center;
+    -fx-padding: 5px;
+}
+
+/* GRILLE DES JOURS */
+.calendar-grid .day-cell {
+    -fx-background-color: transparent;
+    -fx-text-fill: #333333;
+    -fx-font-size: 14px;
+}
+
+/* JOUR SÉLECTIONNÉ */
+.calendar-grid .day-cell:selected {
+    -fx-background-color: #FFA500;
+    -fx-text-fill: white;
+    -fx-border-color: #FF8C00;
+    -fx-border-width: 2px;
+}
+
+/* JOUR ACTUEL (AUJOURD'HUI) */
+.calendar-grid .day-cell.today {
+    -fx-background-color: #32CD32;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+}
+
+/* JOURS HORS DU MOIS COURANT */
+.calendar-grid .day-cell:not(.current-month) {
+    -fx-text-fill: #A9A9A9;
+}
+
+/* STYLE DES CELLULES INACTIVES */
+.calendar-grid .day-cell:disabled {
+    -fx-background-color: transparent;
+    -fx-text-fill: #C0C0C0;
+    -fx-opacity: 0.5;
+}
+
+/* ------------------------------------- */
+/* STYLE GÉNÉRAL DES TEXTFIELDS */
+/* ------------------------------------- */
+.text-field {
+    -fx-background-color: rgba(255, 255, 255, 0.66);
+    -fx-text-fill: black;
+}
+
+.text-field-modif {
+        -fx-background-color: rgba(255, 255, 255, 0.66);
+        -fx-border-width: 2;
+        -fx-border-radius: 10;
+        -fx-background-radius: 10;
+}
+
+.text-field-modif:focused {
+    -fx-border-color: #3366FF;
+    -fx-border-width: 2px;
+    -fx-border-radius: 10px;
+}
+
+.label-color {
+    -fx-text-fill: #00B0ff;
+}
+
+.background-texfield {
+    -fx-background-color: #00B0ff;
+}
+
+
+ .colorBtn {
+     -fx-background-color: #00bfff;
+     -fx-text-fill: white;
+     -fx-font-weight: bold;
+     -fx-background-radius: 30px;
+     -fx-padding: 10px 20px;
+     -fx-cursor: hand;
+ }
+
+
+
+
+
+ .label-profil {
+           -fx-font-family: 'Arial';
+           -fx-font-weight: bold;
+           -fx-font-size: 12px;
+           -fx-letter-spacing: 1px;
+           -fx-text-fill: white;
+ }
+
+  .label-profil-bold{
+          -fx-font-family: 'Arial';
+          -fx-font-weight: bold;
+          -fx-letter-spacing: 1px;
+          -fx-text-fill: white;
+  }
+
+
+
+
+ .button-profil{
+     -fx-background-color: #3366FF;
+     -fx-background-radius: 20px;
+     -fx-border-color: blue;
+     -fx-border-width: 1px;
+     -fx-border-radius: 20px;
+ }
+
+.button-navbar{
+    -fx-background-color: rgb(69 , 95 , 237);
+    -fx-background-radius: 20px;
+    -fx-text-fill: white;
+    }
+}
+
+.label {
+    -fx-text-fill: #FFFFFF;
+}
+

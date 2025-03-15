@@ -1,0 +1,263 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.chart.BarChart?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="530.0" prefWidth="853.0" styleClass="background" stylesheets="@style.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sio.autoecoleprojet.PageMoniteurController">
+   <children>
+      <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="530.0" prefWidth="853.0" styleClass="background" stylesheets="@style.css">
+         <children>
+            <AnchorPane layoutX="51.0" layoutY="93.0" prefHeight="401.0" prefWidth="155.0" style="-fx-background-radius: 25px;" styleClass="navbar" stylesheets="@style.css">
+               <children>
+                  <Button fx:id="btnProfilM" layoutX="12.0" layoutY="40.0" mnemonicParsing="false" onMouseClicked="#btnMenuClicked" prefHeight="29.0" prefWidth="133.0" styleClass="button-navbar" text="PROFIL">
+                     <cursor>
+                        <Cursor fx:constant="OPEN_HAND" />
+                     </cursor>
+                     <font>
+                        <Font size="10.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="btnPlanningM" layoutX="13.0" layoutY="90.0" mnemonicParsing="false" onMouseClicked="#btnMenuClicked" prefHeight="29.0" prefWidth="133.0" styleClass="button-navbar" stylesheets="@style.css" text="PLANNING">
+                     <cursor>
+                        <Cursor fx:constant="OPEN_HAND" />
+                     </cursor>
+                     <font>
+                        <Font size="10.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="btnAjoutLicenceM" layoutX="13.0" layoutY="140.0" mnemonicParsing="false" onMouseClicked="#btnMenuClicked" prefHeight="29.0" prefWidth="133.0" styleClass="button-navbar" text="AJOUT LICENCE" textFill="WHITE">
+                     <cursor>
+                        <Cursor fx:constant="OPEN_HAND" />
+                     </cursor>
+                     <font>
+                        <Font size="10.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="btnStatistiqueM" layoutX="13.0" layoutY="190.0" mnemonicParsing="false" onMouseClicked="#btnMenuClicked" prefHeight="29.0" prefWidth="133.0" styleClass="button-navbar" text="STATISTIQUE" textFill="WHITE">
+                     <cursor>
+                        <Cursor fx:constant="OPEN_HAND" />
+                     </cursor>
+                     <font>
+                        <Font size="10.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="btnDeconnexionM" layoutX="20.0" layoutY="350.0" mnemonicParsing="false" onMouseClicked="#btnMenuClicked" prefHeight="28.0" prefWidth="115.0" style="-fx-background-color: red; -fx-border-color: red;" styleClass="button-profil" text="DECONNEXION" textFill="WHITE">
+                     <cursor>
+                        <Cursor fx:constant="OPEN_HAND" />
+                     </cursor>
+                  </Button>
+               </children>
+            </AnchorPane>
+            <AnchorPane layoutX="280.0" layoutY="20.0" prefHeight="90.0" prefWidth="547.0">
+               <children>
+                  <Label alignment="TOP_CENTER" layoutX="169.0" layoutY="22.0" prefHeight="46.0" prefWidth="214.0" style="-fx-text-fill: black;" text="MONITEUR" textFill="WHITE">
+                     <font>
+                        <Font size="31.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="apStatistique" layoutX="280.0" layoutY="140.0" onMouseClicked="#btnMenuClicked" prefHeight="354.0" prefWidth="543.0" styleClass="background-inscription-lecon">
+               <children>
+                  <BarChart fx:id="graphBar" layoutY="9.0" prefHeight="354.0" prefWidth="391.0">
+                    <xAxis>
+                      <CategoryAxis side="BOTTOM" />
+                    </xAxis>
+                    <yAxis>
+                      <NumberAxis side="LEFT" />
+                    </yAxis>
+                  </BarChart>
+                  <Label alignment="CENTER" layoutX="380.0" layoutY="65.0" text="Nombre de licences possédées" />
+                  <Label alignment="CENTER" layoutX="400.0" layoutY="123.0" text="Nombre de leçons passées" />
+                  <Label alignment="CENTER" layoutX="400.0" layoutY="181.0" text="Nombre de leçons à venir" />
+                  <Label alignment="CENTER" layoutX="400.0" layoutY="238.0" text="Nombre de leçons totales" />
+                  <Label fx:id="nbLicenceTotal" alignment="CENTER" layoutX="414.0" layoutY="93.0" prefHeight="18.0" prefWidth="100.0" />
+                  <Label fx:id="nbLeconPasse" alignment="CENTER" layoutX="414.0" layoutY="150.0" prefHeight="18.0" prefWidth="100.0" />
+                  <Label fx:id="nbLeconAVenir" alignment="CENTER" layoutX="414.0" layoutY="209.0" prefHeight="18.0" prefWidth="100.0" />
+                  <Label fx:id="nbLeconTotal" alignment="CENTER" layoutX="414.0" layoutY="267.0" prefHeight="18.0" prefWidth="100.0" />
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="apAjoutLicence" layoutX="280.0" layoutY="140.0" onMouseClicked="#btnMenuClicked" prefHeight="354.0" prefWidth="543.0" styleClass="background-inscription-lecon">
+               <children>
+                  <TableView fx:id="tvLicence" layoutX="45.0" layoutY="80.0" prefHeight="200.0" prefWidth="207.0" styleClass="background">
+                     <columns>
+                        <TableColumn fx:id="tcLibelle" prefWidth="199.19998168945312" text="Licence non aquis" />
+                     </columns>
+                  </TableView>
+                  <Button layoutX="390.0" layoutY="306.0" mnemonicParsing="false" onMouseClicked="#clickedBtnAjouterLicence" prefHeight="30.0" prefWidth="100.0" styleClass="button-navbar" text="S'inscrire">
+                     <cursor>
+                        <Cursor fx:constant="OPEN_HAND" />
+                     </cursor></Button>
+                  <Label layoutX="45.0" layoutY="18.0" text="Ajouter une license" textFill="WHITE">
+                     <font>
+                        <Font name="Arial Bold" size="16.0" />
+                     </font>
+                  </Label>
+                  <TableView fx:id="tvLicence1" layoutX="300.0" layoutY="80.0" prefHeight="200.0" prefWidth="207.0" styleClass="background">
+                     <columns>
+                        <TableColumn fx:id="tcLibelleAquis" prefWidth="199.19998168945312" text="Licence aquis" />
+                     </columns>
+                  </TableView>
+                  <DatePicker fx:id="dpDateOptentionLicence" layoutX="45.0" layoutY="295.0">
+                     <styleClass>
+                        <String fx:value="date-picker" />
+                        <String fx:value="date-picker-popup" />
+                        <String fx:value="day-cell" />
+                     </styleClass>
+                  </DatePicker>
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="apPlanning" layoutX="280.0" layoutY="140.0" prefHeight="353.0" prefWidth="543.0" style="-fx-background-radius: 20px;" styleClass="navbar">
+               <children>
+                  <AnchorPane prefHeight="353.0" prefWidth="543.0" style="-fx-background-radius: 20px; -fx-background-color: black;">
+                     <children>
+                        <Label layoutX="11.0" layoutY="1.0" prefHeight="18.0" prefWidth="200.0" text="PLANNING">
+                           <font>
+                              <Font size="20.0" />
+                           </font>
+                        </Label>
+                        <TableView fx:id="tViewPlanningMoniteur" layoutX="11.0" layoutY="47.0" prefHeight="282.0" prefWidth="526.0" style="-fx-background-color: blue;">
+                           <columns>
+                              <TableColumn fx:id="tcNomElevePlanningMoniteur" prefWidth="105.66024780273438" text="Nom élève" />
+                              <TableColumn fx:id="tcDatePlanningMoniteur" prefWidth="101.9368896484375" text="Date" />
+                              <TableColumn fx:id="tcHeurePlanningMoniteur" prefWidth="99.0631103515625" text="Heures" />
+                              <TableColumn fx:id="tcVehiculePlanningMoniteur" prefWidth="102.30096435546875" text="Véhicule" />
+                              <TableColumn fx:id="tcTypePermis" prefWidth="115.9271240234375" text="Type Permis" />
+                           </columns>
+                        </TableView>
+                     </children>
+                     <styleClass>
+                        <String fx:value="stats-label" />
+                        <String fx:value="text-field" />
+                        <String fx:value="text-field-modif" />
+                        <String fx:value="table-row-cell" />
+                        <String fx:value="navbar" />
+                     </styleClass>
+                  </AnchorPane>
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="apProfilModif" layoutX="280.0" layoutY="140.0" prefHeight="354.0" prefWidth="543.0" style="-fx-background-radius: 20px;" styleClass="navbar">
+               <children>
+                  <Label layoutX="308.0" layoutY="53.0" text="Nom : " />
+                  <Label layoutX="79.0" layoutY="53.0" text="Prénom : " />
+                  <Label layoutX="79.0" layoutY="112.0" text="Sexe : " />
+                  <Label layoutX="308.0" layoutY="112.0" text="Date de naissance : " />
+                  <Label layoutX="79.0" layoutY="174.0" text="Code Postal : " />
+                  <Label layoutX="308.0" layoutY="174.0" text="Ville : " />
+                  <Label layoutX="79.0" layoutY="235.0" text="Téléphone :" />
+                  <TextField fx:id="txtFNomMoniteur" layoutX="308.0" layoutY="74.0" prefHeight="4.0" prefWidth="160.0" promptText="Nom" styleClass="text-field-modif" />
+                  <TextField fx:id="txtFPrenomMoniteur" layoutX="79.0" layoutY="74.0" promptText="Prénom" styleClass="text-field-modif" />
+                  <TextField fx:id="txtFSexeMoniteur" layoutX="79.0" layoutY="135.0" promptText="Sexe" styleClass="text-field-modif" />
+                  <TextField fx:id="txtFCodePostMoniteur" layoutX="79.0" layoutY="195.0" promptText="Code Postal" styleClass="text-field-modif" />
+                  <TextField fx:id="txtFVilleMoniteur" layoutX="308.0" layoutY="195.0" promptText="Ville" styleClass="text-field-modif" />
+                  <TextField fx:id="txtFTelMoniteur" layoutX="79.0" layoutY="255.0" promptText="Téléphone" styleClass="text-field-modif" />
+                  <DatePicker fx:id="datePickDateNaissanceMoniteur" layoutX="308.0" layoutY="132.0" maxHeight="60.0" maxWidth="160.0" minHeight="29.0" minWidth="130.0" prefHeight="29.0" prefWidth="160.0" promptText="Date de Naissance" />
+                  <Button layoutX="415.0" layoutY="305.0" mnemonicParsing="false" onMouseClicked="#btnModifierInfoMoniteur" styleClass="button-profil" text="Valider " textFill="WHITE">
+                     <cursor>
+                        <Cursor fx:constant="OPEN_HAND" />
+                     </cursor></Button>
+                  <TextField fx:id="txtFAdresseMoniteur" layoutX="308.0" layoutY="255.0" prefHeight="4.0" prefWidth="160.0" promptText="Adresse" styleClass="text-field-modif" />
+                  <Label layoutX="308.0" layoutY="235.0" text="Adresse :" />
+                  <Label layoutX="16.0" layoutY="16.0" prefHeight="26.0" prefWidth="58.0" text="PROFIL" textFill="WHITE">
+                     <font>
+                        <Font name="Arial Bold" size="15.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="apProfil" layoutX="280.0" layoutY="140.0" prefHeight="353.0" prefWidth="543.0" style="-fx-background-radius: 20px;" styleClass="navbar">
+               <children>
+                  <AnchorPane prefHeight="353.0" prefWidth="543.0" style="-fx-background-radius: 20px;" styleClass="navbar" stylesheets="@style.css">
+                     <children>
+                        <Label layoutX="54.0" layoutY="200.0" styleClass="label-profil" text="Sexe : " textFill="WHITE" />
+                        <Label layoutX="54.0" layoutY="225.0" styleClass="label-profil" text="Date de naissance : " textFill="WHITE" />
+                        <Label fx:id="lblSexe" layoutX="100.0" layoutY="200.0" prefHeight="17.0" prefWidth="61.0" styleClass="label-profil" text="Femme" textFill="WHITE" />
+                        <Label fx:id="lblDate" layoutX="175.0" layoutY="225.0" styleClass="label-profil" text="09/02/2000" textFill="WHITE" />
+                        <Button layoutX="54.0" layoutY="290.0" mnemonicParsing="false" onMouseClicked="#clickedBtnModif" prefHeight="28.0" prefWidth="78.0" stylesheets="@style.css" text="Modifier" textFill="WHITE">
+                           <styleClass>
+                              <String fx:value="button-profil" />
+                              <String fx:value="button-profil" />
+                           </styleClass>
+                           <cursor>
+                              <Cursor fx:constant="OPEN_HAND" />
+                           </cursor>
+                        </Button>
+                        <AnchorPane layoutX="334.0" layoutY="122.0" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="93.0" prefWidth="189.0" stylesheets="@style.css">
+                           <children>
+                              <Label alignment="TOP_RIGHT" layoutX="17.0" layoutY="65.0" text="Mot de passe : " textFill="WHITE" />
+                              <Label fx:id="lblLogin" layoutX="59.0" layoutY="45.0" text="GDhb12" textFill="WHITE" />
+                              <Label fx:id="lblMdp" layoutX="102.0" layoutY="65.0" maxWidth="50.0" text="Test1" textFill="WHITE" />
+                              <Label layoutX="53.0" layoutY="15.0" text="Identifiant" textFill="WHITE">
+                                 <font>
+                                    <Font name="Arial Bold" size="18.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="17.0" layoutY="45.0" text="Login :" textFill="WHITE" />
+                           </children>
+                           <styleClass>
+                              <String fx:value="border-radius" />
+                              <String fx:value="label-profil" />
+                              <String fx:value="background" />
+                           </styleClass>
+                        </AnchorPane>
+                        <AnchorPane layoutX="334.0" layoutY="227.0" prefHeight="111.0" prefWidth="189.0" stylesheets="@style.css">
+                           <children>
+                              <Label layoutX="16.0" layoutY="45.0" text="Adresse :" textFill="WHITE" />
+                              <Label layoutX="16.0" layoutY="85.0" text="Code postal : " textFill="WHITE" />
+                              <Label layoutX="16.0" layoutY="65.0" text="Ville : " textFill="WHITE" />
+                              <Label fx:id="lblAdresse" layoutX="74.0" layoutY="45.0" text="6 rue de Paris" textFill="WHITE" />
+                              <Label fx:id="lblCodePostal" layoutX="94.0" layoutY="85.0" text="95100" textFill="WHITE" />
+                              <Label fx:id="lblVille" layoutX="52.0" layoutY="65.0" text="Argenteuil" textFill="WHITE" />
+                              <Label layoutX="46.0" layoutY="13.0" text="Information" textFill="WHITE">
+                                 <font>
+                                    <Font name="Arial Bold" size="18.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                           <styleClass>
+                              <String fx:value="border-radius" />
+                              <String fx:value="label-profil" />
+                              <String fx:value="background" />
+                           </styleClass>
+                        </AnchorPane>
+                        <Label fx:id="lblTel" layoutX="90.0" layoutY="250.0" styleClass="label-profil" text="06 65 34 35 36" textFill="WHITE" />
+                        <Label layoutX="54.0" layoutY="250.0" styleClass="label-profil" text="Tel : " textFill="WHITE" />
+                        <AnchorPane layoutX="35.0" layoutY="24.0" prefHeight="78.0" prefWidth="483.0" style="-fx-background-radius: 20px;" styleClass="background">
+                           <children>
+                              <Label layoutX="16.0" layoutY="15.0" prefHeight="23.0" prefWidth="107.0" styleClass="label-profil-bold" text="Bienvenue ">
+                                 <font>
+                                    <Font name="Arial Bold" size="15.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="lblNom" layoutX="99.0" layoutY="20.0" prefHeight="15.0" prefWidth="31.0" styleClass="label-profil" text="Paul" textFill="WHITE" />
+                              <Label fx:id="lblPrenom" layoutX="130.0" layoutY="20.0" styleClass="label-profil" text="Miniou" textFill="WHITE" />
+                              <Label layoutX="16.0" layoutY="45.0" styleClass="label-profil" text="Vous etes sur votre Profil !" />
+                              <ImageView fitHeight="45.0" fitWidth="63.0" layoutX="350.0" layoutY="15.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../img/AvatarConnexion.png" />
+                                 </image>
+                              </ImageView>
+                           </children>
+                        </AnchorPane>
+                        <Label layoutX="54.0" layoutY="129.0" styleClass="label-profil-bold" text="Vos informations :" />
+                     </children>
+                  </AnchorPane>
+               </children>
+            </AnchorPane>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>
