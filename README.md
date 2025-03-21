@@ -64,8 +64,6 @@ Partie Responsable:
 - Mot de passe haché
 
 BDD modifié (src\main\resources\BDD\autoecole.sql)
--ajout d'une table compte 
--ajout d'une colonne codeCategorie dans lecon
 
 
 Pour installer le projet, il faut installer intellij puis ouvrir le projet.
